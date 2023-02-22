@@ -27,8 +27,9 @@ const questions = [
         name: 'usage'
     },
     {
-        type: 'input',
-        message: 'License?',
+        type: 'list',
+        message: "Choose a license for your project.",
+        choices: ['GNU AGPLv3', 'GNU GPLv3', 'GNU LGPLv3', 'Mozilla Public License 2.0', 'Apache License 2.0', 'MIT License', 'Boost Software License 1.0', 'The Unlicense'],
         name: 'license'
     },
     {
@@ -44,14 +45,19 @@ const questions = [
 ];
 
 // TODO: Create a function to write README file
+
 function writeToFile(fileName, data) {
-    const fileName = 'README.md';
-    fs.writeFile(fileName, data), (err) =>
+    fs.writeFile(fileName, data, err => {
     err ? console.error(err) : console.log('Success')
-}
+    });
+};
 
 // TODO: Create a function to initialize app
-function init() {}
+async function init() {
+    const userResponses = await inquirer.prompt(questions);
+    const markdown = generateMarkdown(userResponses);
+    await writeToFile('README.md', markdown);
+};
 
 // Function call to initialize app
 init();
