@@ -7,17 +7,17 @@ function renderLicenseBadge(license) {
     } if (license === 'GNU GPLv3') {
       licenseBadge = `[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)]`;
     } if (license === 'GNU LGPLv3') {
-      licenseBadge === `[![License: LGPL v3](https://img.shields.io/badge/License-LGPL_v3-blue.svg)]`;
+      licenseBadge = `[![License: LGPL v3](https://img.shields.io/badge/License-LGPL_v3-blue.svg)]`;
     } if (license === 'Mozilla Public License 2.0') {
-      licenseBadge === `[![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)]`;
+      licenseBadge =`[![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)]`;
     } if (license === 'Apache License 2.0') {
-      licenseBadge === `[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)]`;
+      licenseBadge = `[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)]`;
     } if (license === 'MIT License') {
-      licenseBadge === `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)]`;
+      licenseBadge = `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)]`;
     } if (license === 'Boost Software License 1.0') {
-      licenseBadge === `[![License](https://img.shields.io/badge/License-Boost_1.0-lightblue.svg)]`;
+      licenseBadge = `[![License](https://img.shields.io/badge/License-Boost_1.0-lightblue.svg)]`;
     } if (license === 'The Unlicense') {
-      licenseBadge === `[![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)]`;
+      licenseBadge =`[![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)]`;
     }
     return licenseBadge;
   }
@@ -25,8 +25,24 @@ function renderLicenseBadge(license) {
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
-    let licenseLink = `https://opensource.org/licenses/`;
-    licenseLink += `${license}`;
+    let licenseLink = ``;
+    if (license === 'GNU AGPLv3') {
+      licenseLink += `https://opensource.org/licenses/agpl-3.0`;
+    } if (license === 'GNU GPLv3') {
+      licenseLink += `https://opensource.org/licenses/gpl-3.0)`;
+    } if (license === 'GNU LGPLv3') {
+      licenseLink += `https://opensource.org/licenses/lgpl-3.0`;
+    } if (license === 'Mozilla Public License 2.0') {
+      licenseLink += `https://opensource.org/licenses/MPL-2.0`;
+    } if (license === 'Apache License 2.0') {
+      licenseLink += `https://opensource.org/licenses/Apache-2.0`;
+    } if (license === 'MIT License') {
+      licenseLink += `https://opensource.org/licenses/MIT`;
+    } if (license === 'Boost Software License 1.0') {
+      licenseLink += `https://www.boost.org/LICENSE_1_0.txt`;
+    } if (license === 'The Unlicense') {
+      licenseLink += `http://unlicense.org/`;
+    }
     return licenseLink;
   }
 
@@ -34,8 +50,12 @@ function renderLicenseLink(license) {
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
-    let licenseSection = `# License`;
-    licenseSection += renderLicenseLink(license);
+    let licenseSection = `## License
+    
+    ${license}
+    
+    ${renderLicenseLink(license)}
+    `
     return licenseSection;
   }
 
