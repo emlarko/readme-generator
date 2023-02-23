@@ -14,7 +14,7 @@ Start the application by running node index.js in the command line.
 
 ## Usage 
 
-[![Demo Video] ("https://drive.google.com/file/d/1EDr96EiVLrKNf7pLgPU43gdh4MrZ7wIo/preview")]
+![DemoGif](demo/demo.gif?raw=true "demo gif")
 
 After running node index.js in the command line, the application will prompt the user with a series of questions for the README file. 
 
