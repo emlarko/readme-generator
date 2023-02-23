@@ -8,6 +8,21 @@ const generateMarkdown = require('./utils/generateMarkdown.js');
 const questions = [
     {
         type: 'input',
+        message: 'What is your GitHub username?',
+        name: 'username'
+    },
+    {
+        type: 'input',
+        message: 'What is your GitHub url?',
+        name: 'url'
+    },
+    {
+        type: 'input',
+        message: 'What is your email?',
+        name: 'email'
+    },
+    {
+        type: 'input',
         message: 'What is the Project Title?',
         name: 'title'
     },
@@ -52,12 +67,17 @@ function writeToFile(fileName, data) {
     });
 };
 
+
 // TODO: Create a function to initialize app
 async function init() {
     const userResponses = await inquirer.prompt(questions);
+
     const markdown = generateMarkdown(userResponses);
-    await writeToFile('README.md', markdown);
+    await writeToFile('exampleREADME.md', markdown);
 };
+
+
+  
 
 // Function call to initialize app
 init();

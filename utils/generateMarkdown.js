@@ -1,4 +1,32 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
+// function getUser(username) {
+//   const apiUrl = 'https://api.github.com/users/' + username;
+//   let user = '';
+//   let url = '';
+  
+//   fetch(apiUrl)
+//   .then(function (response) {
+//     if (response.ok) {
+//       response.json().then(function (data) {
+//         user = data.login;
+//         console.log('user', user);
+//         url = data.url;
+//         console.log('url', url);
+//         let userSection = `
+
+//         GitHub: ${user} ${url}
+//         `
+//         return userSection;
+//       });
+//     } else {
+//       alert('Error: ' + response.statusText);
+//     }
+//   })
+//   .catch(function (error) {
+//     alert('Unable to connect to GitHub');
+//   });
+//   }
+
+// TODO: Create a function that returns a license badge based on which license is passed i
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
   let licenseBadge = '';
@@ -62,23 +90,24 @@ function renderLicenseSection(license) {
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   let contents = `## Table of Contents`;
-  if (data.installation != '') {
+  if (data.installation) {
     contents += `
     * Installation (#installation)`
-  } if (data.usage != '') { 
+  } if (data.usage) { 
     contents += `
     * Usage (#usage)`
-  } if (data.license != '') {
+  } if (data.license) {
     contents += `
     * License (#license)`
-  } if (data.contributing != '') {
+  } if (data.contributing) {
     contents += `
     * Contributing (#contributing)`
-  } if (data.tests != '') {
+  } if (data.tests) {
     contents += `
     * Tests (#tests)`
-  }
-  
+  } contents += `
+    * Questions (#questions)`
+
   let readme =
   
   `# ${data.title}
@@ -89,30 +118,58 @@ function generateMarkdown(data) {
   
   ${data.description}
 
-  ${contents}
+  ${contents}`
+
+  if (data.installation) {
+
+  readme += `
 
   ## Installation 
+  
+  ${data.installation}`
 
-  ${data.installation}
+  } if (data.usage) {
+    readme += `
 
   ## Usage 
 
   ${data.usage}
+  `
+  } 
+
+  readme += `
 
   ${renderLicenseSection(data.license)}
+  `
+
+  if (data.contributing) {
+    readme += `
 
   ## Contributing 
 
   ${data.contributing}
+    `
+  } if (data.tests) {
+    readme += `
 
   ## Tests
 
   ${data.tests}
   `
+  } 
+  readme += `
+
+  ## Questions
+
+  For any questions, please contact me with the information below:
+
+  GitHub: ${data.username} ${data.url}
+
+  email: ${data.email}
+  `
 
   return readme;
   ;
 }
-
 
 module.exports = generateMarkdown;
