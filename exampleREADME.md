@@ -1,6 +1,6 @@
-# Project Title
+# Example
 
-  [![License: AGPL v3](https://img.shields.io/badge/License-AGPL_v3-blue.svg)]
+  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)]
     
   ## Description 
   
@@ -16,29 +16,29 @@
 
   ## Installation 
   
-  This is installation information
+  This is installation info
 
   ## Usage 
 
-  This is usage information
+  This is usage info
   
 
   ## License
     
-  GNU AGPLv3
+  MIT License
     
-  https://opensource.org/licenses/agpl-3.0
+  https://opensource.org/licenses/MIT
   
   
 
   ## Contributing 
 
-  contribute
+  This is contribution info
     
 
   ## Tests
 
-  tests
+  Tests
   
 
   ## Questions

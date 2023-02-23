@@ -1,33 +1,4 @@
-// function getUser(username) {
-//   const apiUrl = 'https://api.github.com/users/' + username;
-//   let user = '';
-//   let url = '';
-  
-//   fetch(apiUrl)
-//   .then(function (response) {
-//     if (response.ok) {
-//       response.json().then(function (data) {
-//         user = data.login;
-//         console.log('user', user);
-//         url = data.url;
-//         console.log('url', url);
-//         let userSection = `
-
-//         GitHub: ${user} ${url}
-//         `
-//         return userSection;
-//       });
-//     } else {
-//       alert('Error: ' + response.statusText);
-//     }
-//   })
-//   .catch(function (error) {
-//     alert('Unable to connect to GitHub');
-//   });
-//   }
-
-// TODO: Create a function that returns a license badge based on which license is passed i
-// If there is no license, return an empty string
+// Renders a license badge depending on the license picked from the list 
 function renderLicenseBadge(license) {
   let licenseBadge = '';
     if (license === 'GNU AGPLv3') {
@@ -50,8 +21,7 @@ function renderLicenseBadge(license) {
     return licenseBadge;
   }
 
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
+// Returns a link to the license depending on the license picked form the list
 function renderLicenseLink(license) {
     let licenseLink = ``;
     if (license === 'GNU AGPLv3') {
@@ -75,8 +45,7 @@ function renderLicenseLink(license) {
   }
 
 
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
+// Renders the license section of the README
 function renderLicenseSection(license) {
     let licenseSection = `## License
     
@@ -87,7 +56,7 @@ function renderLicenseSection(license) {
     return licenseSection;
   }
 
-// TODO: Create a function to generate markdown for README
+// Generates the markdown for the README
 function generateMarkdown(data) {
   let contents = `## Table of Contents`;
   if (data.installation) {
