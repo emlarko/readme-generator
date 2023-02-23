@@ -80,10 +80,10 @@ function renderLicenseLink(license) {
 function renderLicenseSection(license) {
     let licenseSection = `## License
     
-    ${license}
+  ${license}
     
-    ${renderLicenseLink(license)}
-    `
+  ${renderLicenseLink(license)}
+  `
     return licenseSection;
   }
 
@@ -92,21 +92,20 @@ function generateMarkdown(data) {
   let contents = `## Table of Contents`;
   if (data.installation) {
     contents += `
-    * Installation (#installation)`
+  * [Installation](#installation)`
   } if (data.usage) { 
     contents += `
-    * Usage (#usage)`
-  } if (data.license) {
+  * [Usage](#usage)`
+  } contents += `
+  * [License](#license)`
+    if (data.contributing) {
     contents += `
-    * License (#license)`
-  } if (data.contributing) {
-    contents += `
-    * Contributing (#contributing)`
+  * [Contributing](#contributing)`
   } if (data.tests) {
     contents += `
-    * Tests (#tests)`
+  * [Tests](#tests)`
   } contents += `
-    * Questions (#questions)`
+  * [Questions](#questions)`
 
   let readme =
   

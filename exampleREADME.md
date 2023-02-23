@@ -1,44 +1,44 @@
-# test
+# Project Title
 
   [![License: AGPL v3](https://img.shields.io/badge/License-AGPL_v3-blue.svg)]
     
   ## Description 
   
-  test
+  This is a description
 
   ## Table of Contents
-    * Installation (#installation)
-    * Usage (#usage)
-    * License (#license)
-    * Contributing (#contributing)
-    * Tests (#tests)
-    * Questions (#questions)
+  * [Installation](#installation)
+  * [Usage](#usage)
+  * [License](#license)
+  * [Contributing](#contributing)
+  * [Tests](#tests)
+  * [Questions](#questions)
 
   ## Installation 
   
-  test
+  This is installation information
 
   ## Usage 
 
-  test
+  This is usage information
   
 
   ## License
     
-    GNU AGPLv3
+  GNU AGPLv3
     
-    https://opensource.org/licenses/agpl-3.0
-    
+  https://opensource.org/licenses/agpl-3.0
+  
   
 
   ## Contributing 
 
-  test
+  contribute
     
 
   ## Tests
 
-  test
+  tests
   
 
   ## Questions
@@ -47,5 +47,5 @@
 
   GitHub: emlarko https://github.com/emlarko
 
-  email: email
+  email: emilylarkin11@hotmail.co.uk
   
